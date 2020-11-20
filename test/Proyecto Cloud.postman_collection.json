@@ -1,0 +1,339 @@
+{
+	"info": {
+		"_postman_id": "a7e5e8f4-2244-41fc-b8da-c6fca12be74c",
+		"name": "Proyecto Cloud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Empresa",
+			"item": [
+				{
+					"name": "Obtener la informacion de una empresa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{Servidor}}/business/Test-642",
+							"protocol": "http",
+							"host": [
+								"{{Servidor}}"
+							],
+							"path": [
+								"business",
+								"Test-642"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear una nueva empresa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "{{empresa}}",
+									"description": "Login de la nueva cuenta de la empresa (debe ser único).",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "{{email}}",
+									"description": "Correo electrónico de la cuenta de la empresa(debe ser único).",
+									"type": "text"
+								},
+								{
+									"key": "contraseña",
+									"value": "{{clave}}",
+									"description": "Contraseña de la nueva cuenta de la empresa\n.",
+									"type": "text"
+								}
+							],
+							"options": {
+								"formdata": {}
+							}
+						},
+						"url": {
+							"raw": "http://{{Servidor}}/business/create",
+							"protocol": "http",
+							"host": [
+								"{{Servidor}}"
+							],
+							"path": [
+								"business",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener token para la empresa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "username",
+								"type": "text",
+								"value": "user_login",
+								"disabled": true
+							},
+							{
+								"key": "password",
+								"type": "text",
+								"value": "p4ssW0rd_",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "{{email}}",
+									"description": "Email con el cual se encuentra registrada la empresa en la aplicación",
+									"type": "text"
+								},
+								{
+									"key": "contraseña",
+									"value": "{{clave}}",
+									"description": "Contraseña de la empresa en el sistema",
+									"type": "text"
+								}
+							],
+							"options": {
+								"urlencoded": {}
+							}
+						},
+						"url": {
+							"raw": "http://{{Servidor}}/auth/",
+							"protocol": "http",
+							"host": [
+								"{{Servidor}}"
+							],
+							"path": [
+								"auth",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Diseño",
+			"item": [
+				{
+					"name": "Crear un nuevo diseño para un proyecto",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"description": "Token de autorización, se requiere como mecanismo de seguridad para el acceso a este endpoint.",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Token {{token}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre_disenador",
+									"value": "Pepe",
+									"description": "Nombre del diseñador que carga el diseño",
+									"type": "text"
+								},
+								{
+									"key": "apellido_disenador",
+									"value": "Loperena",
+									"description": "Apellido del diseñador que carga el diseño",
+									"type": "text"
+								},
+								{
+									"key": "email_disenador",
+									"value": "pepe@loperena.com",
+									"description": "Email de contacto del diseñador",
+									"type": "text"
+								},
+								{
+									"key": "estado",
+									"value": "false",
+									"description": "Estado de procesamiento. False := El archivo no ha sido procesado. True := Archivo procesado",
+									"type": "text"
+								},
+								{
+									"key": "diseno_original",
+									"description": "Imagen con el diseño original - sin procesar\n",
+									"type": "file",
+									"src": "/C:/Users/Geovanny/Pictures/joker.jpg"
+								},
+								{
+									"key": "precio",
+									"value": "5000",
+									"type": "text"
+								}
+							],
+							"options": {
+								"formdata": {}
+							}
+						},
+						"url": {
+							"raw": "http://{{Servidor}}/project/f211f019-f893-4fdb-9fdb-3215df6a9d96/design/",
+							"protocol": "http",
+							"host": [
+								"{{Servidor}}"
+							],
+							"path": [
+								"project",
+								"f211f019-f893-4fdb-9fdb-3215df6a9d96",
+								"design",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos los diseños de un proyecto",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"description": "Token de autorización, se requiere como mecanismo de seguridad para el acceso a este endpoint.",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Token {{token}}",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://{{Servidor}}/project/f211f019-f893-4fdb-9fdb-3215df6a9d96/design/",
+							"protocol": "http",
+							"host": [
+								"{{Servidor}}"
+							],
+							"path": [
+								"project",
+								"f211f019-f893-4fdb-9fdb-3215df6a9d96",
+								"design",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Proyecto",
+			"item": [
+				{
+					"name": "Crear un nuevo proyecto para una empresa",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"description": "Token de autorización, se requiere como mecanismo de seguridad para el acceso a este endpoint.",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Token {{token}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "Logo Empresa",
+									"description": "Nombre del nuevo proyecto",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "Logo",
+									"description": "Descripción del nuevo proyecto",
+									"type": "text"
+								},
+								{
+									"key": "valor",
+									"value": "25",
+									"description": "Valor estimado a pagar por el nuevo proyecto",
+									"type": "text"
+								}
+							],
+							"options": {
+								"formdata": {}
+							}
+						},
+						"url": {
+							"raw": "http://{{Servidor}}/business/Test-642/project/",
+							"protocol": "http",
+							"host": [
+								"{{Servidor}}"
+							],
+							"path": [
+								"business",
+								"Test-642",
+								"project",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos los proyectos de una empresa",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"description": "Token de autorización, se requiere como mecanismo de seguridad para el acceso a este endpoint.",
+								"key": "Authorization",
+								"type": "text",
+								"value": "Token {{token}}"
+							}
+						],
+						"url": {
+							"raw": "http://{{Servidor}}/business/{{business_url}}/project/",
+							"protocol": "http",
+							"host": [
+								"{{Servidor}}"
+							],
+							"path": [
+								"business",
+								"{{business_url}}",
+								"project",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

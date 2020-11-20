@@ -1,0 +1,47 @@
+name: cloud
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - ca-certificates=2020.6.20=hecda079_0
+  - certifi=2020.6.20=py37hc8dfbb8_0
+  - openssl=1.1.1h=he774522_0
+  - pip=20.2.3=py_0
+  - python=3.7.8=h60c2a47_1_cpython
+  - python_abi=3.7=1_cp37m
+  - setuptools=49.6.0=py37hc8dfbb8_1
+  - sqlite=3.33.0=he774522_0
+  - vc=14.1=h869be7e_1
+  - vs2015_runtime=14.16.27012=h30e32a0_2
+  - wheel=0.35.1=pyh9f0ad1d_0
+  - wincertstore=0.2=py37_1003
+  - pip:
+    - amqp==5.0.1
+    - asgiref==3.2.10
+    - billiard==3.6.3.0
+    - boto3==1.15.6
+    - botocore==1.18.6
+    - celery==5.0.0
+    - click==7.1.2
+    - click-didyoumean==0.0.3
+    - click-repl==0.1.6
+    - django==3.1.1
+    - django-cors-headers==3.5.0
+    - django-environ==0.4.5
+    - django-storages==1.10.1
+    - djangorestframework==3.11.1
+    - jmespath==0.10.0
+    - kombu==5.0.2
+    - pillow==7.2.0
+    - prompt-toolkit==3.0.7
+    - psycopg2-binary==2.8.6
+    - pyjwt==1.7.1
+    - python-dateutil==2.8.1
+    - pytz==2020.1
+    - redis==3.5.3
+    - s3transfer==0.3.3
+    - six==1.15.0
+    - sqlparse==0.3.1
+    - urllib3==1.25.10
+    - vine==5.0.0
+    - wcwidth==0.2.5
